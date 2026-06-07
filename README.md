@@ -342,3 +342,15 @@ Blacklisting an RFID tag immediately sets all linked passes to `EXPIRED` and mar
 GET /health
 ```
 Returns `{"status": "ok", "message": "Gatepass System Backend is running"}`
+
+
+---
+
+## 🌍 Inclusive Design (Non-Tech Savvy Alternatives)
+
+While the system prioritizes a high-tech "Digital First" experience, it is designed to be fully accessible to users without smartphones or stable internet:
+
+1. **OTP-Based Verification:** Visitors with basic feature phones can receive a 6-digit SMS OTP (simulated via API). The Guard verifies this code at the gate, removing the need for QR scans or apps.
+2. **RFID "Hands-Free" Entry:** Faculty vehicles use passive RFID tags. The system identifies the vehicle and opens the gate automatically, requiring zero interaction from the driver.
+3. **Guard-Assisted Lookup:** The system allows Guards to search for approved passes via Phone Number or Student ID, supporting users who may have lost their device or are carrying physical paper permits.
+4. **Offline Resilience:** The database schema supports pre-generated pass IDs, allowing students to print passes in advance if they anticipate poor connectivity at the campus perimeter.
